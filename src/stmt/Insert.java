@@ -12,14 +12,12 @@ public class Insert {
 	private PreparedStatement stmt;
 	public ArrayList<String> attributes = new ArrayList<String>();
 	public ArrayList<String> datatypes = new ArrayList<String>();
-	// Because we may have multiple datatypes, we suppress rawtypes warning.
-	@SuppressWarnings("rawtypes")
-	public ArrayList values = new ArrayList();
+	public ArrayList<Object> values = new ArrayList<Object>();
 	public void insert() throws Exception {
 		try {
 			if(new JDBCDriver().isDriverSupported()) {
 				int l = this.attributes.size();
-				if(l != this.values.size()) {
+				if(l != this.values.size() || l != this.datatypes.size()) {
 					throw new Exception("One or more elements is missing");
 				}
 				String s = "INSERT INTO " + this.table + " (";
@@ -76,9 +74,26 @@ public class Insert {
 						break;
 					}
 				}
-				this.stmt.executeUpdate();
+				this.stmt.execute();
 			}
 		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public Insert(String table, String[] attributes, String[] datatypes, Object[] values) {
+		try {
+			this.table = table;
+			for(int i = 0; i < attributes.length; i++) {
+				this.attributes.add(attributes[i]);
+			}
+			for(int i = 0; i < datatypes.length; i++) {
+				this.datatypes.add(datatypes[i]);
+			}
+			for(int i = 0; i < values.length; i++) {
+				this.values.add(values[i]);
+			}
+			insert();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
