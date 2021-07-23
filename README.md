@@ -8,16 +8,16 @@ This project is still under development. The current status is as follows:
     Database Connectivity
     <ul>
       <li> Code upload: Completed </li>
-      <li> Tests: In progress </li>
-      <li> Functionality: Testing required </li>
+      <li> Tests: Passing </li>
+      <li> Functionality: Functional </li>
     </ul>
   </li>
   <li>
     Insert
     <ul>
-      <li> Code upload: Partial </li>
-      <li> Tests: Yet to start </li>
-      <li> Functionality: Yet to write full code </li>
+      <li> Code upload: Completed </li>
+      <li> Tests: Passing </li>
+      <li> Functionality: Functional </li>
     </ul>
   </li>
   <li>
