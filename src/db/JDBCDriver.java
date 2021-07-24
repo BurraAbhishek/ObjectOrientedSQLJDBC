@@ -1,10 +1,9 @@
 package db;
 
-public class JDBCDriver extends Exception {
+public class JDBCDriver {
 	/**
 	 * This class contains the required check for the JDBC Driver
 	 */
-	private static final long serialVersionUID = -2232976324656191269L;
 	private String jdbcDriverClass = "";
 	public Boolean isDriverSupported() {
 		/**
