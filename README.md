@@ -12,6 +12,22 @@ This project is still under development. The current status is as follows:
       <li> Functionality: Functional </li>
     </ul>
   </li>
+   <li>
+    Create Database
+    <ul>
+      <li> Code upload: Pull request submitted </li>
+      <li> Tests: Pull request submitted </li>
+      <li> Functionality: Pull request submitted </li>
+    </ul>
+  </li>
+  <li>
+    Create Table
+    <ul>
+      <li> Code upload: Pull request submitted </li>
+      <li> Tests: Pull request submitted </li>
+      <li> Functionality: Pull request submitted </li>
+    </ul>
+  </li>
   <li>
     Insert
     <ul>
@@ -22,6 +38,14 @@ This project is still under development. The current status is as follows:
   </li>
   <li>
     Update
+    <ul>
+      <li> Code upload: Completed </li>
+      <li> Tests: Passing </li>
+      <li> Functionality: Functional </li>
+    </ul>
+  </li>
+  <li>
+    Select
     <ul>
       <li> Code upload: Yet to start. Contributions and pull requests are welcome. </li>
       <li> Tests: Yet to start </li>
