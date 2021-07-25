@@ -7,13 +7,19 @@ import java.sql.*;
 import java.util.*;
 import java.math.*;
 
+/**
+ * This class contains methods to insert data into a table in an SQL database
+ * 
+ * @author Burra Abhishek
+ * 
+ */
 public class Insert {
 	private String table = "";
 	private PreparedStatement stmt;
 	private ArrayList<String> attributes = new ArrayList<String>();
 	private ArrayList<String> datatypes = new ArrayList<String>();
 	private ArrayList<Object> values = new ArrayList<Object>();
-	public void insert() throws Exception {
+	protected void insert() throws Exception {
 		try {
 			if(new JDBCDriver().isDriverSupported()) {
 				int l = this.attributes.size();
@@ -84,6 +90,14 @@ public class Insert {
 			e.printStackTrace();
 		}
 	}
+	/**
+	 * Insert records into a table
+	 * 
+	 * @param table (String) The table to insert records into
+	 * @param attributes (String[]) The attributes of the table to insert the records (values)
+	 * @param datatypes (String[]) The data type of each value inserted
+	 * @param values (Object[]) The values inserted into the table
+	 */
 	public Insert(String table, String[] attributes, String[] datatypes, Object[] values) {
 		try {
 			this.table = table;
@@ -96,7 +110,7 @@ public class Insert {
 			for(int i = 0; i < values.length; i++) {
 				this.values.add(values[i]);
 			}
-			insert();
+			this.insert();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

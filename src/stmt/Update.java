@@ -7,6 +7,12 @@ import java.sql.*;
 import java.util.*;
 import java.math.*;
 
+/**
+ * Updates a given table in an SQL Database
+ * 
+ * @author Burra Abhishek
+ *
+ */
 public class Update {
 	private String table = "";
 	private PreparedStatement stmt;
@@ -17,7 +23,7 @@ public class Update {
 	private ArrayList<Object> values = new ArrayList<Object>();
 	private ArrayList<Object> constraintvalues = new ArrayList<Object>();
 
-	public void update() throws Exception {
+	protected void update() throws Exception {
 		try {
 			if (new JDBCDriver().isDriverSupported()) {
 				int l1 = this.attributes.size();
@@ -139,6 +145,17 @@ public class Update {
 		}
 	}
 
+	/**
+	 * Updates a given table in a database
+	 * 
+	 * @param table (String) The table to be updated
+	 * @param attribute (String[]) The attributes in the table to be updated
+	 * @param datatype (String[]) The data type of each updated value
+	 * @param value (Object[]) The updated values
+	 * @param constraintkeys (String[]) The attributes in the constraints
+	 * @param constraintdatatypes (String[]) The data types of each constraint value
+	 * @param constraintvalues (Object[]) The constraint values
+	 */
 	public Update(String table, String[] attributes, String[] datatypes, Object[] values, String[] constraintkeys,
 			String[] constraintdatatypes, Object[] constraintvalues) {
 		try {
@@ -161,12 +178,23 @@ public class Update {
 			for (int i = 0; i < constraintvalues.length; i++) {
 				this.constraintvalues.add(constraintvalues[i]);
 			}
-			update();
+			this.update();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
+	/**
+	 * Updates a given table in a database
+	 * 
+	 * @param table (String) The table to be updated
+	 * @param attribute (String) The attribute in the table to be updated
+	 * @param datatype (String) The data type of the updated value
+	 * @param value (Object) The updated value
+	 * @param constraintkeys (String[]) The attributes in the constraints
+	 * @param constraintdatatypes (String[]) The data types of each constraint value
+	 * @param constraintvalues (Object[]) The constraint values
+	 */
 	public Update(String table, String attribute, String datatype, Object value, String[] constraintkeys,
 			String[] constraintdatatypes, Object[] constraintvalues) {
 		try {
@@ -183,12 +211,23 @@ public class Update {
 			for (int i = 0; i < constraintvalues.length; i++) {
 				this.constraintvalues.add(constraintvalues[i]);
 			}
-			update();
+			this.update();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
+	/**
+	 * Updates a given table in a database
+	 * 
+	 * @param table (String) The table to be updated
+	 * @param attribute (String[]) The attributes in the table to be updated
+	 * @param datatype (String[]) The data type of each updated value
+	 * @param value (Object[]) The updated values
+	 * @param constraintkeys (String) The attribute in the constraints
+	 * @param constraintdatatypes (String) The data types of the constraint value
+	 * @param constraintvalues (Object) The constraint value
+	 */
 	public Update(String table, String[] attributes, String[] datatypes, Object[] values, String constraintkeys,
 			String constraintdatatypes, Object constraintvalues) {
 		try {
@@ -205,12 +244,23 @@ public class Update {
 			this.constraintkeys.add(constraintkeys);
 			this.constraintdatatypes.add(constraintdatatypes);
 			this.constraintvalues.add(constraintvalues);
-			update();
+			this.update();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
+	/**
+	 * Updates a given table in a database
+	 * 
+	 * @param table (String) The table to be updated
+	 * @param attribute (String) The attribute in the table to be updated
+	 * @param datatype (String) The data type of the updated value
+	 * @param value (Object) The updated value
+	 * @param constraintkeys (String) The attribute in the constraints
+	 * @param constraintdatatypes (String) The data type of the constraint value
+	 * @param constraintvalues (Object) The constraint value
+	 */
 	public Update(String table, String attribute, String datatype, Object value, String constraintkeys,
 			String constraintdatatypes, Object constraintvalues) {
 		try {
@@ -221,7 +271,7 @@ public class Update {
 			this.constraintkeys.add(constraintkeys);
 			this.constraintdatatypes.add(constraintdatatypes);
 			this.constraintvalues.add(constraintvalues);
-			update();
+			this.update();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
