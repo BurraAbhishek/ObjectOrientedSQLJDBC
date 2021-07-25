@@ -1,14 +1,18 @@
 package db;
 
+/**
+ * This class contains methods to check if a given JDBC Driver is available or not
+ * @author Burra Abhishek
+ *
+ */
 public class JDBCDriver {
-	/**
-	 * This class contains the required check for the JDBC Driver
-	 */
 	private String jdbcDriverClass = "";
+	/**
+	 * Checks if the JDBC Driver Class is available or not.
+	 * 
+	 * @return true if the given JDBC driver exists, false otherwise.
+	 */
 	public Boolean isDriverSupported() {
-		/**
-		 * Returns true if the given JDBC driver exists, else returns false.
-		 */
 		try {
 			Class.forName(this.jdbcDriverClass);
 			return true;
